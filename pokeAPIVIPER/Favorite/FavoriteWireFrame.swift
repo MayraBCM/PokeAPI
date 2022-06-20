@@ -1,0 +1,41 @@
+//
+//  FavoriteWireFrame.swift
+//  pokeAPIVIPER
+//
+//  Created by Mayra Brenda Carreño Mondragon on 16/06/22.
+//  
+//
+
+import Foundation
+import UIKit
+
+class FavoriteWireFrame: FavoriteWireFrameProtocol {
+
+    class func createFavoriteModule() -> UIViewController {
+        let navController = mainStoryboard.instantiateViewController(withIdentifier: "FavoriteView")
+        if let view = navController.children.first as? FavoriteView {
+            let presenter: FavoritePresenterProtocol & FavoriteInteractorOutputProtocol = FavoritePresenter()
+            let interactor: FavoriteInteractorInputProtocol & FavoriteRemoteDataManagerOutputProtocol = FavoriteInteractor()
+            let localDataManager: FavoriteLocalDataManagerInputProtocol = FavoriteLocalDataManager()
+            let remoteDataManager: FavoriteRemoteDataManagerInputProtocol = FavoriteRemoteDataManager()
+            let wireFrame: FavoriteWireFrameProtocol = FavoriteWireFrame()
+            
+            view.presenter = presenter
+            presenter.view = view
+            presenter.wireFrame = wireFrame
+            presenter.interactor = interactor
+            interactor.presenter = presenter
+            interactor.localDatamanager = localDataManager
+            interactor.remoteDatamanager = remoteDataManager
+            remoteDataManager.remoteRequestHandler = interactor
+            
+            return navController
+        }
+        return UIViewController()
+    }
+    
+    static var mainStoryboard: UIStoryboard {
+        return UIStoryboard(name: "Favorite", bundle: Bundle.main)
+    }
+    
+}
