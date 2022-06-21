@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 
 class HomeWireFrame: HomeWireFrameProtocol {
+  
+  
+    
    
     
 class func createHomeModule() -> UIViewController {
@@ -39,12 +42,15 @@ class func createHomeModule() -> UIViewController {
         return UIStoryboard(name: "HomeView", bundle: Bundle.main)
     }
     
-    func showDetailView(from view: HomeViewProtocol, attack: Int, defense: Int, description: String, imageUrl: String) {
-        if let newView = view as? ViewController{
-            newView.present(DetailWireFrame.createDetailModule(with: attack, defense: defense, description: description, imageUrl: imageUrl),animated:true)
-        }
+    
+    func showDetailPokemonView(from view: HomeViewProtocol, poke: Pokemon_Struct) {
+        let newDetailView = DetailWireFrame.createDetailModule(poke :poke)
+        if let newView = view as? UIViewController{
+            newView.navigationController?.pushViewController(newDetailView, animated: true)
+        
     }
     
     
     
+}
 }

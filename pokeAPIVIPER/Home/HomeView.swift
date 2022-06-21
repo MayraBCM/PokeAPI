@@ -40,18 +40,6 @@ extension HomeView: HomeViewProtocol {
     
 }
 
-extension HomeView : UITableViewDelegate{
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        
-//        presenter?.showDataDetail()
-       
-        presenter?.showDetailView(attack: self.arrListaPoke[indexPath.row].attack, defense: self.arrListaPoke[indexPath.row].defense, description: self.arrListaPoke[indexPath.row].description, imageUrl: self.arrListaPoke[indexPath.row].imageUrl)
-        tableView.deselectRow(at: indexPath, animated: true)
-    
-        
-    }
-}
 
 
 extension HomeView : UITableViewDataSource{
@@ -66,6 +54,18 @@ extension HomeView : UITableViewDataSource{
         return cell
     }
     
-    
-    
 }
+
+extension HomeView : UITableViewDelegate{
+    
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+     
+      presenter?.showDataDetail(poke: arrListaPoke[indexPath.row])
+       
+    
+       
+        
+    }
+}
+

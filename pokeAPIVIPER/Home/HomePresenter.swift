@@ -18,14 +18,14 @@ class HomePresenter  {
 }
 
 extension HomePresenter: HomePresenterProtocol {
- func showDetailView(attack: Int, defense: Int, description: String, imageUrl: String) {
-     wireFrame?.showDetailView(from: view!, attack: attack, defense: defense, description: description, imageUrl: imageUrl)
+    
+    func showDataDetail(poke: Pokemon_Struct) {
+        wireFrame?.showDetailPokemonView(from: view!, poke: poke)
     }
     
+  
     
     
-    
-
     
    
     func viewDidLoad() {

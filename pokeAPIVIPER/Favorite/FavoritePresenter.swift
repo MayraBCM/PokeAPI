@@ -20,6 +20,7 @@ class FavoritePresenter  {
 extension FavoritePresenter: FavoritePresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
+        
     }
 }
 

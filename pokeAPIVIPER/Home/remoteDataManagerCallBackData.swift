@@ -26,7 +26,6 @@ class HomeInteractor: HomeInteractorInputProtocol {
 extension HomeInteractor: HomeRemoteDataManagerOutputProtocol {
     func remoteDataManagerCallBackData(with data: [Pokemon_Struct]) {
         
-        print("Estoy obteniendo estos datos: \(data)")
         
         presenter?.interactorPushDataPresenter(with: data)
         

@@ -16,3 +16,4 @@ struct Pokemon_Struct : Codable {
         let imageUrl: String
         let type: String
 }
+

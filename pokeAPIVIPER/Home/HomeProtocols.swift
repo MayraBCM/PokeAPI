@@ -19,10 +19,9 @@ protocol HomeWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createHomeModule() -> UIViewController
     
-//   func showDetailPokemonView(from view:HomeViewProtocol, poke: Pokemon_Struct)
+     func showDetailPokemonView(from view: HomeViewProtocol, poke: Pokemon_Struct)
    
-    func showDetailView(from view: HomeViewProtocol, attack : Int, defense : Int, description : String, imageUrl: String)
-    
+
 }
 
 protocol HomePresenterProtocol: AnyObject {
@@ -30,8 +29,9 @@ protocol HomePresenterProtocol: AnyObject {
     var view: HomeViewProtocol? { get set }
     var interactor: HomeInteractorInputProtocol? { get set }
     var wireFrame: HomeWireFrameProtocol? { get set }
-   func showDetailView(attack : Int, defense : Int, description : String, imageUrl: String)
-   
+    func showDataDetail(poke: Pokemon_Struct)
+
+    
     
     func viewDidLoad()
 }

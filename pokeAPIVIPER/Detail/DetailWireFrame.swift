@@ -10,8 +10,10 @@ import Foundation
 import UIKit
 
 class DetailWireFrame: DetailWireFrameProtocol {
+  
+    
    
-    static func createDetailModule(with attack: Int, defense: Int, description: String, imageUrl: String) -> UIViewController {
+    static func createDetailModule(poke: Pokemon_Struct) -> UIViewController {
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "DetailView")
         if let view = viewController as? DetailView {
             let presenter: DetailPresenterProtocol & DetailInteractorOutputProtocol = DetailPresenter()
@@ -24,8 +26,7 @@ class DetailWireFrame: DetailWireFrameProtocol {
             presenter.view = view
             presenter.wireFrame = wireFrame
             presenter.interactor = interactor
-           
-            
+            presenter.datoRecibido = poke
             interactor.presenter = presenter
             interactor.localDatamanager = localDataManager
             interactor.remoteDatamanager = remoteDataManager

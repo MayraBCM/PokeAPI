@@ -11,4 +11,7 @@ import Foundation
 class DetailLocalDataManager:DetailLocalDataManagerInputProtocol {
     
     
+    
+    
+    
 }

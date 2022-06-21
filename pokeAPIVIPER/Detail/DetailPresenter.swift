@@ -9,6 +9,8 @@
 import Foundation
 
 class DetailPresenter : DetailPresenterProtocol  {
+    var datoRecibido: Pokemon_Struct?
+    
     
     // MARK: Properties
     weak var view: DetailViewProtocol?
@@ -17,13 +19,18 @@ class DetailPresenter : DetailPresenterProtocol  {
     
 
    
-    
-    // TODO: implement presenter methods
+
     func viewDidLoad() {
-        
+        guard let poke = datoRecibido else {
+            return
+        }
+        view?.getDataPoke(poke: poke)
+        view?.cargarActivity()
     }
+  
+    
 }
 
 extension DetailPresenter: DetailInteractorOutputProtocol {
-    // TODO: implement interactor output methods
+   
 }

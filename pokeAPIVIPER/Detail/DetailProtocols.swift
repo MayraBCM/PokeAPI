@@ -12,13 +12,16 @@ import UIKit
 protocol DetailViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: DetailPresenterProtocol? { get set }
-    func ShowData(attack: Int, defense: Int, description: String, imageUrl: String)
+    func getDataPoke(poke: Pokemon_Struct)
+    func cargarActivity()
+    func stopAndHideActivity()
+  
    
 }
 
 protocol DetailWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
-    static func createDetailModule(with attack: Int, defense: Int, description: String, imageUrl: String) -> UIViewController
+    static func createDetailModule(poke: Pokemon_Struct) -> UIViewController
     
 }
 
@@ -27,6 +30,7 @@ protocol DetailPresenterProtocol: AnyObject {
     var view: DetailViewProtocol? { get set }
     var interactor: DetailInteractorInputProtocol? { get set }
     var wireFrame: DetailWireFrameProtocol? { get set }
+    var datoRecibido : Pokemon_Struct? {get set}
   
     
     func viewDidLoad()
