@@ -20,10 +20,13 @@ class FavoritePresenter  {
 extension FavoritePresenter: FavoritePresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
-        
+        interactor?.dataLocal()
     }
 }
 
 extension FavoritePresenter: FavoriteInteractorOutputProtocol {
-    // TODO: implement interactor output methods
+    func presentData(fav: [favorite]) {
+        view?.showData(fav: fav)
+    }
+    
 }

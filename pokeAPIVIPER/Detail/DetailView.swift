@@ -27,7 +27,8 @@ class DetailView: UIViewController {
   
     var presenter: DetailPresenterProtocol?
 
-    var arrPoke = [Pokemon_Struct]()
+//    var arrPoke = [Pokemon_Struct]()
+    var pokeS : Pokemon_Struct!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +36,20 @@ class DetailView: UIViewController {
     }
     
     @IBAction func addFavorite(_ sender: Any) {
+        
         let alerta = UIAlertController(title: "Se agrego a favoritos", message: "", preferredStyle: .alert)
             let acept = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
                alerta.addAction(acept)
             present(alerta, animated: true)
+        presenter?.saveData(pokemon: pokeS!)
+    
     }
+    
+    
+    @IBAction func goFavorite(_ sender: Any) {
+        presenter?.goFavorite()
+    }
+    
     
     
 }
@@ -65,6 +75,8 @@ extension DetailView: DetailViewProtocol {
         lblAttack.text = String(poke.attack)
         lblDefence.text = String(poke.defense)
         txvDescription.text = poke.description
+        
+        pokeS = poke
         
         guard let url = URL(string: poke.imageUrl )  else {return}
         do{

@@ -22,6 +22,7 @@ protocol DetailViewProtocol: AnyObject {
 protocol DetailWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createDetailModule(poke: Pokemon_Struct) -> UIViewController
+    func  presenterFavoriteView(from view: DetailViewProtocol)
     
 }
 
@@ -31,7 +32,8 @@ protocol DetailPresenterProtocol: AnyObject {
     var interactor: DetailInteractorInputProtocol? { get set }
     var wireFrame: DetailWireFrameProtocol? { get set }
     var datoRecibido : Pokemon_Struct? {get set}
-  
+    func saveData(pokemon : Pokemon_Struct)
+    func goFavorite()
     
     func viewDidLoad()
 }
@@ -45,6 +47,9 @@ protocol DetailInteractorInputProtocol: AnyObject {
     var presenter: DetailInteractorOutputProtocol? { get set }
     var localDatamanager: DetailLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: DetailRemoteDataManagerInputProtocol? { get set }
+    
+    func saveData(pokemon : Pokemon_Struct)
+   
 }
 
 protocol DetailDataManagerInputProtocol: AnyObject {
@@ -64,4 +69,6 @@ protocol DetailRemoteDataManagerOutputProtocol: AnyObject {
 
 protocol DetailLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
+    func saveData(pokemon : Pokemon_Struct)
+    
 }

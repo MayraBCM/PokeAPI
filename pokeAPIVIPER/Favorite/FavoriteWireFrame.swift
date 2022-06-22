@@ -13,9 +13,9 @@ class FavoriteWireFrame: FavoriteWireFrameProtocol {
 
     class func createFavoriteModule() -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "FavoriteView")
-        if let view = navController.children.first as? FavoriteView {
+        if let view = navController as? FavoriteView {
             let presenter: FavoritePresenterProtocol & FavoriteInteractorOutputProtocol = FavoritePresenter()
-            let interactor: FavoriteInteractorInputProtocol & FavoriteRemoteDataManagerOutputProtocol = FavoriteInteractor()
+            let interactor: FavoriteInteractorInputProtocol & FavoriteRemoteDataManagerOutputProtocol & FavoriteLocalDataManagerOutputProtocol = FavoriteInteractor()
             let localDataManager: FavoriteLocalDataManagerInputProtocol = FavoriteLocalDataManager()
             let remoteDataManager: FavoriteRemoteDataManagerInputProtocol = FavoriteRemoteDataManager()
             let wireFrame: FavoriteWireFrameProtocol = FavoriteWireFrame()
@@ -26,6 +26,7 @@ class FavoriteWireFrame: FavoriteWireFrameProtocol {
             presenter.interactor = interactor
             interactor.presenter = presenter
             interactor.localDatamanager = localDataManager
+            localDataManager.interactor = interactor
             interactor.remoteDatamanager = remoteDataManager
             remoteDataManager.remoteRequestHandler = interactor
             

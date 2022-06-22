@@ -99,6 +99,17 @@
                                 <color key="tintColor" red="0.17022222070399165" green="0.097277205738502875" blue="0.39148956444545457" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ucw-i2-y3o">
+                                <rect key="frame" x="287" y="86" width="100" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="favoritos">
+                                    <color key="baseForegroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="goFavorite:" destination="9Xz-tb-M5m" eventType="touchUpInside" id="fXw-dR-Oho"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Dnu-jr-W7S"/>
                         <color key="backgroundColor" red="0.54732969310000001" green="0.1594569351" blue="0.1389509629" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

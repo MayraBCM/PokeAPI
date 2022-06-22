@@ -8,15 +8,23 @@
 
 import Foundation
 
-class FavoriteInteractor: FavoriteInteractorInputProtocol {
-
-    // MARK: Properties
+class FavoriteInteractor: FavoriteInteractorInputProtocol, FavoriteLocalDataManagerOutputProtocol {
+    
     weak var presenter: FavoriteInteractorOutputProtocol?
     var localDatamanager: FavoriteLocalDataManagerInputProtocol?
     var remoteDatamanager: FavoriteRemoteDataManagerInputProtocol?
+    
+    func dataLocal() {
+        localDatamanager?.getDataLocal()
+    }
+    
+    func callBack(fav: [favorite]) {
+        presenter?.presentData(fav: fav)
+    }
 
 }
 
 extension FavoriteInteractor: FavoriteRemoteDataManagerOutputProtocol {
-    // TODO: Implement use case methods
+   
+    
 }

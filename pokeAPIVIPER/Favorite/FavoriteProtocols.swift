@@ -12,8 +12,9 @@ import UIKit
 protocol FavoriteViewProtocol:  AnyObject{
     // PRESENTER -> VIEW
     var presenter: FavoritePresenterProtocol? { get set }
+   func showData(fav : [favorite])
 }
-
+ 
 protocol FavoriteWireFrameProtocol: AnyObject{
     // PRESENTER -> WIREFRAME
     static func createFavoriteModule() -> UIViewController
@@ -30,6 +31,7 @@ protocol FavoritePresenterProtocol: AnyObject {
 
 protocol FavoriteInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
+  func presentData(fav : [favorite])
 }
 
 protocol FavoriteInteractorInputProtocol: AnyObject {
@@ -37,6 +39,7 @@ protocol FavoriteInteractorInputProtocol: AnyObject {
     var presenter: FavoriteInteractorOutputProtocol? { get set }
     var localDatamanager: FavoriteLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: FavoriteRemoteDataManagerInputProtocol? { get set }
+    func dataLocal()
 }
 
 protocol FavoriteDataManagerInputProtocol: AnyObject {
@@ -46,12 +49,22 @@ protocol FavoriteDataManagerInputProtocol: AnyObject {
 protocol FavoriteRemoteDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: FavoriteRemoteDataManagerOutputProtocol? { get set }
+    
+    
 }
 
 protocol FavoriteRemoteDataManagerOutputProtocol: AnyObject {
     // REMOTEDATAMANAGER -> INTERACTOR
+   
 }
 
 protocol FavoriteLocalDataManagerInputProtocol: AnyObject {
+    var interactor: FavoriteLocalDataManagerOutputProtocol? {get set}
     // INTERACTOR -> LOCALDATAMANAGER
+   func getDataLocal()
+}
+
+protocol FavoriteLocalDataManagerOutputProtocol: AnyObject{
+    //  LOCALDATAMANAGER -> INTERACTOR
+    func callBack(fav : [favorite])
 }

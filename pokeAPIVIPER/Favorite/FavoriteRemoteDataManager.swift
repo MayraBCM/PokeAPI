@@ -12,4 +12,7 @@ class FavoriteRemoteDataManager:FavoriteRemoteDataManagerInputProtocol {
     
     var remoteRequestHandler: FavoriteRemoteDataManagerOutputProtocol?
     
+    
+    
+    
 }

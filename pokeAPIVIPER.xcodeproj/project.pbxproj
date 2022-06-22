@@ -19,7 +19,6 @@
 		EE66DAB72853A3AC00E604FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE66DAB62853A3AC00E604FC /* AppDelegate.swift */; };
 		EE66DAB92853A3AC00E604FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE66DAB82853A3AC00E604FC /* SceneDelegate.swift */; };
 		EE66DABB2853A3AC00E604FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE66DABA2853A3AC00E604FC /* ViewController.swift */; };
-		EE66DABE2853A3AC00E604FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE66DABC2853A3AC00E604FC /* Main.storyboard */; };
 		EE66DAC02853A3AC00E604FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE66DABF2853A3AC00E604FC /* Assets.xcassets */; };
 		EE66DAC32853A3AC00E604FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE66DAC12853A3AC00E604FC /* LaunchScreen.storyboard */; };
 		EE66DAE72853B24000E604FC /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE66DAE02853B24000E604FC /* HomePresenter.swift */; };
@@ -32,6 +31,7 @@
 		EE66DAF22853BD3600E604FC /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE66DAF12853BD3600E604FC /* Pokemon.swift */; };
 		EE6817C1286240580049083E /* Pokemon.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE6817C0286240580049083E /* Pokemon.plist */; };
 		EE6817C428624C730049083E /* Pokemon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE6817C228624C730049083E /* Pokemon.xcdatamodeld */; };
+		EE6817C628637DF00049083E /* favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6817C528637DF00049083E /* favorite.swift */; };
 		EED89182285BF42500E63A9E /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8917B285BF42500E63A9E /* FavoritePresenter.swift */; };
 		EED89183285BF42500E63A9E /* FavoriteLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8917C285BF42500E63A9E /* FavoriteLocalDataManager.swift */; };
 		EED89184285BF42500E63A9E /* FavoriteProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8917D285BF42500E63A9E /* FavoriteProtocols.swift */; };
@@ -56,7 +56,6 @@
 		EE66DAB62853A3AC00E604FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE66DAB82853A3AC00E604FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EE66DABA2853A3AC00E604FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EE66DABD2853A3AC00E604FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE66DABF2853A3AC00E604FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE66DAC22853A3AC00E604FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE66DAC42853A3AC00E604FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,6 +69,7 @@
 		EE66DAF12853BD3600E604FC /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		EE6817C0286240580049083E /* Pokemon.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Pokemon.plist; sourceTree = "<group>"; };
 		EE6817C328624C730049083E /* Pokemon.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pokemon.xcdatamodel; sourceTree = "<group>"; };
+		EE6817C528637DF00049083E /* favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favorite.swift; sourceTree = "<group>"; };
 		EED8917B285BF42500E63A9E /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
 		EED8917C285BF42500E63A9E /* FavoriteLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteLocalDataManager.swift; sourceTree = "<group>"; };
 		EED8917D285BF42500E63A9E /* FavoriteProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProtocols.swift; sourceTree = "<group>"; };
@@ -116,7 +116,6 @@
 				EE66DAB62853A3AC00E604FC /* AppDelegate.swift */,
 				EE66DAB82853A3AC00E604FC /* SceneDelegate.swift */,
 				EE66DABA2853A3AC00E604FC /* ViewController.swift */,
-				EE66DABC2853A3AC00E604FC /* Main.storyboard */,
 				EE66DABF2853A3AC00E604FC /* Assets.xcassets */,
 				EE66DAC12853A3AC00E604FC /* LaunchScreen.storyboard */,
 				EE66DAC42853A3AC00E604FC /* Info.plist */,
@@ -160,14 +159,15 @@
 		EED89178285B930000E63A9E /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
+				EED89189285BF75400E63A9E /* Favorite.storyboard */,
+				EED8917F285BF42500E63A9E /* FavoriteView.swift */,
 				EED8917B285BF42500E63A9E /* FavoritePresenter.swift */,
 				EED8917C285BF42500E63A9E /* FavoriteLocalDataManager.swift */,
 				EED8917D285BF42500E63A9E /* FavoriteProtocols.swift */,
 				EED8917E285BF42500E63A9E /* FavoriteInteractor.swift */,
-				EED8917F285BF42500E63A9E /* FavoriteView.swift */,
 				EED89180285BF42500E63A9E /* FavoriteRemoteDataManager.swift */,
 				EED89181285BF42500E63A9E /* FavoriteWireFrame.swift */,
-				EED89189285BF75400E63A9E /* Favorite.storyboard */,
+				EE6817C528637DF00049083E /* favorite.swift */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -235,7 +235,6 @@
 				EE66DAC32853A3AC00E604FC /* LaunchScreen.storyboard in Resources */,
 				EED8918A285BF75400E63A9E /* Favorite.storyboard in Resources */,
 				EE66DAC02853A3AC00E604FC /* Assets.xcassets in Resources */,
-				EE66DABE2853A3AC00E604FC /* Main.storyboard in Resources */,
 				EE1B23C82858F39C006D8769 /* DetailView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +253,7 @@
 				EE66DAE82853B24000E604FC /* HomeLocalDataManager.swift in Sources */,
 				EE1EF4112853C55200AE947C /* DetailRemoteDataManager.swift in Sources */,
 				EED89182285BF42500E63A9E /* FavoritePresenter.swift in Sources */,
+				EE6817C628637DF00049083E /* favorite.swift in Sources */,
 				EED89188285BF42500E63A9E /* FavoriteWireFrame.swift in Sources */,
 				EE66DAB92853A3AC00E604FC /* SceneDelegate.swift in Sources */,
 				EE66DAE92853B24000E604FC /* HomeProtocols.swift in Sources */,
@@ -279,14 +279,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EE66DABC2853A3AC00E604FC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EE66DABD2853A3AC00E604FC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EE66DAC12853A3AC00E604FC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

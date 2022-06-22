@@ -10,9 +10,8 @@ import Foundation
 import UIKit
 
 class DetailWireFrame: DetailWireFrameProtocol {
-  
-    
-   
+ 
+
     static func createDetailModule(poke: Pokemon_Struct) -> UIViewController {
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "DetailView")
         if let view = viewController as? DetailView {
@@ -42,8 +41,12 @@ class DetailWireFrame: DetailWireFrameProtocol {
     }
     
    
-        
-    
-    
+    func presenterFavoriteView(from view: DetailViewProtocol) {
+        let newDetailFavorite = FavoriteWireFrame.createFavoriteModule()
+        if let newView = view as? UIViewController{
+            newView.navigationController?.pushViewController(newDetailFavorite, animated: true)
+    }
     
 }
+}
+

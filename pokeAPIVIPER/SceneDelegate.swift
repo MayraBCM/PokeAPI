@@ -7,9 +7,7 @@
 
 import UIKit
 
-@available(iOS 13.0, *)
-@available(iOS 13.0, *)
-@available(iOS 13.0, *)
+
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -23,7 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         let HomeView = HomeWireFrame.createHomeModule()
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = HomeView
+        let tab = UITabBarController()
+    
+        tab.viewControllers = [HomeView]
+        window?.rootViewController = tab
         window?.makeKeyAndVisible()
             
         
@@ -55,6 +56,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 
 
