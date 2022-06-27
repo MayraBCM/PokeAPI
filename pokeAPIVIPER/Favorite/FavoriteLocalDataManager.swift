@@ -11,6 +11,7 @@ import CoreData
 import UIKit
 
 class FavoriteLocalDataManager:FavoriteLocalDataManagerInputProtocol {
+   
     
 
     var interactor: FavoriteLocalDataManagerOutputProtocol?
@@ -20,9 +21,13 @@ class FavoriteLocalDataManager:FavoriteLocalDataManagerInputProtocol {
        
     var favorit: [favorite]? = []
   
+   
+    var attack: Int?
+    var defense: Int?
+    var desc: String?
     var name: String?
     var imageUrl: String?
-    var type: String?
+   
        
         func getDataLocal(){
             
@@ -36,16 +41,18 @@ class FavoriteLocalDataManager:FavoriteLocalDataManagerInputProtocol {
                 {
                    
                    
+                    self.attack = data.value(forKey: "attack")! as? Int
+                    self.defense = data.value(forKey: "defense")! as? Int
+                    self.desc = data.value(forKey: "desc")! as? String
                     self.name = data.value(forKey: "name")! as? String
-                 
                     self.imageUrl = data.value(forKey: "image")! as? String
                    
-                    let fav = favorite( name: name!, imageUrl: imageUrl!)
+                    let fav = favorite(attack: attack!, defense: defense!, desc: desc!, name: name!, imageUrl: imageUrl!)
                     
                     self.favorit?.append(fav)
                     
                 }
-                print(favorit)
+               
                interactor?.callBack(fav: favorit!)
                 
             } catch {
@@ -53,7 +60,37 @@ class FavoriteLocalDataManager:FavoriteLocalDataManagerInputProtocol {
                 print("Failed")
             }
         }
-}
+    
+    
+    func eliminarData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorite")
+            request.predicate = NSPredicate(format: "id = %@", "0")
+        request.returnsObjectsAsFaults = false
+        do {
+                let result = try context.fetch(request)
+            print(result)
+                for data in result as! [NSManagedObject]
+                        
+        {
+            context.delete(data)
+                    
+            do {
+                try context.save()
+                }
+                catch {
+                }
+        }
+
+        } catch {
+
+                print("Failed")
+        }
+    }
+    
+    }
+
     
    
     

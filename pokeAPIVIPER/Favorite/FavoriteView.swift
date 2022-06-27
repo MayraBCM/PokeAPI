@@ -13,31 +13,15 @@ class viewColletion : UICollectionViewCell{
 
     
     @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var imvCollec: UIImageView!
-    
+   
     @IBOutlet weak var lblnombrep: UILabel!
     
 }
 
-class viewFavoriteCell: UITableViewCell{
-
-    @IBOutlet weak var imvImage: UIImageView!
-    
-    @IBOutlet weak var lblNombre: UILabel!
-    
-    @IBOutlet weak var lblAttack: UILabel!
-    
-    @IBOutlet weak var lblDefense: UILabel!
-    
-    
-}
-
-
-
 class FavoriteView: UIViewController, UITableViewDelegate {
     
 
-    @IBOutlet weak var tblTabla: UITableView!
+   
     
     @IBOutlet weak var collectionview: UICollectionView!
     // MARK: Properties
@@ -50,10 +34,10 @@ class FavoriteView: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         presenter?.viewDidLoad()
         
-
-        
-        
     }
+    
+    @IBOutlet weak var btnRemove: UICollectionView!
+    
 }
 
 extension FavoriteView: FavoriteViewProtocol {
@@ -78,7 +62,7 @@ extension FavoriteView : UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! viewColletion
         
         cell.lblnombrep.text = arrFavoritos[indexPath.row].name
-        print(arrFavoritos[indexPath.row].name)
+       
         
        let url = URL(string: arrFavoritos[indexPath.row].imageUrl)!
             if let imageData = try? Data(contentsOf: url) {
@@ -94,27 +78,10 @@ extension FavoriteView : UICollectionViewDataSource{
 
 extension FavoriteView : UICollectionViewDelegate{
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        presenter?.showDataDetail(fav: arrFavoritos[indexPath.row])
+    }
+    
+    
 }
-/*extension FavoriteView : UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrFavoritos.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! viewFavoriteCell
-        cell.lblNombre.text = arrFavoritos[indexPath.row].name
-     print(arrFavoritos[indexPath.row].name)
-        
-        let url = URL(string: arrFavoritos[indexPath.row].imageUrl)!
-            if let imageData = try? Data(contentsOf: url) {
-                if let loadedImage = UIImage(data: imageData) {
-                    cell.imvImage.image = loadedImage
-                }
-            }
-        
-        return cell
-        
-    }
-  
-    
-}*/

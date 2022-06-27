@@ -11,10 +11,6 @@ import UIKit
 
 class HomeWireFrame: HomeWireFrameProtocol {
   
-  
-    
-   
-    
 class func createHomeModule() -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "HomeView")
         if let view = navController.children.first as? HomeView {

@@ -18,6 +18,7 @@ protocol FavoriteViewProtocol:  AnyObject{
 protocol FavoriteWireFrameProtocol: AnyObject{
     // PRESENTER -> WIREFRAME
     static func createFavoriteModule() -> UIViewController
+    func showDetailPokemonView(from view: FavoriteViewProtocol, fav: favorite)
 }
 
 protocol FavoritePresenterProtocol: AnyObject {
@@ -25,6 +26,7 @@ protocol FavoritePresenterProtocol: AnyObject {
     var view: FavoriteViewProtocol? { get set }
     var interactor: FavoriteInteractorInputProtocol? { get set }
     var wireFrame: FavoriteWireFrameProtocol? { get set }
+    func showDataDetail(fav: favorite)
     
     func viewDidLoad()
 }
@@ -62,6 +64,7 @@ protocol FavoriteLocalDataManagerInputProtocol: AnyObject {
     var interactor: FavoriteLocalDataManagerOutputProtocol? {get set}
     // INTERACTOR -> LOCALDATAMANAGER
    func getDataLocal()
+   func eliminarData()
 }
 
 protocol FavoriteLocalDataManagerOutputProtocol: AnyObject{

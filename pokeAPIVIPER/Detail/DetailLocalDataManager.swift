@@ -40,9 +40,9 @@ class DetailLocalDataManager:DetailLocalDataManagerInputProtocol {
                
                 do {
                   try context.save()
-                    print("Save")
+                    
                  } catch {
-                  print("Error saving")
+                  
                 }
         
             }

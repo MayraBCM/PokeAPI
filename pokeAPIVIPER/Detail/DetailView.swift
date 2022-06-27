@@ -19,6 +19,8 @@ class DetailView: UIViewController {
     
     @IBOutlet weak var lblDefence: UILabel!
     
+    @IBOutlet weak var btnFavorite: UIButton!
+    
     @IBOutlet weak var aivActivity: UIActivityIndicatorView!
     
     @IBOutlet weak var txvDescription: UITextView!
@@ -27,32 +29,56 @@ class DetailView: UIViewController {
   
     var presenter: DetailPresenterProtocol?
 
-//    var arrPoke = [Pokemon_Struct]()
+    var btnFav: Bool = true
     var pokeS : Pokemon_Struct!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         presenter?.viewDidLoad()
+      
     }
     
-    @IBAction func addFavorite(_ sender: Any) {
+   
+  
+    
+    @IBAction func addFavorite(_ sender: UIButton) {
+        
+        btnFav = !btnFav
+        if (btnFav == true){
+            btnFavorite.setImage(UIImage(named: "fav.png"), for: .normal)
+            
+        }else{
+            btnFavorite.setImage(UIImage(named: "Favorito1.png"), for: .normal)
+        }
         
         let alerta = UIAlertController(title: "Se agrego a favoritos", message: "", preferredStyle: .alert)
             let acept = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
                alerta.addAction(acept)
             present(alerta, animated: true)
+        
+
+        
         presenter?.saveData(pokemon: pokeS!)
     
     }
     
     
+    
+    
+    
+    
     @IBAction func goFavorite(_ sender: Any) {
         presenter?.goFavorite()
+        
     }
     
     
-    
 }
+
+
+    
+
 
 extension DetailView: DetailViewProtocol {
     func cargarActivity() {

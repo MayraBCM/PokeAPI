@@ -12,7 +12,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+   
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -22,8 +22,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let HomeView = HomeWireFrame.createHomeModule()
         window = UIWindow(windowScene: scene)
         let tab = UITabBarController()
-    
         tab.viewControllers = [HomeView]
+        
+        let FavoriteView = FavoriteWireFrame.createFavoriteModule()
+        let tabB = UITabBarController()
+        tabB.viewControllers = [FavoriteView]
+        window?.rootViewController = tabB
+        
         window?.rootViewController = tab
         window?.makeKeyAndVisible()
             
