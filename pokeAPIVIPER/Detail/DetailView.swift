@@ -12,25 +12,16 @@ import UIKit
 class DetailView: UIViewController {
     
     @IBOutlet weak var lblNombre: UILabel!
-    
     @IBOutlet weak var imvImage: UIImageView!
-    
     @IBOutlet weak var lblAttack: UILabel!
-    
     @IBOutlet weak var lblDefence: UILabel!
-    
     @IBOutlet weak var btnFavorite: UIButton!
     
     @IBOutlet weak var aivActivity: UIActivityIndicatorView!
     
     @IBOutlet weak var txvDescription: UITextView!
-    
-    
   
     var presenter: DetailPresenterProtocol?
-
-    var btnFav: Bool = true
-    var pokeS : Pokemon_Struct!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,48 +30,28 @@ class DetailView: UIViewController {
       
     }
     
-   
-  
-    
+
     @IBAction func addFavorite(_ sender: UIButton) {
         
-        btnFav = !btnFav
-        if (btnFav == true){
-            btnFavorite.setImage(UIImage(named: "fav.png"), for: .normal)
-            
+        presenter!.btnFav = !presenter!.btnFav
+        if (presenter!.btnFav == true){
+            btnFavorite.setImage(UIImage(named: presenter?.nombreImage ?? ""), for: .normal)
         }else{
-            btnFavorite.setImage(UIImage(named: "Favorito1.png"), for: .normal)
+            btnFavorite.setImage(UIImage(named: presenter?.nombreImage2 ?? ""), for: .normal)
         }
         
-        let alerta = UIAlertController(title: "Se agrego a favoritos", message: "", preferredStyle: .alert)
-            let acept = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
-               alerta.addAction(acept)
-            present(alerta, animated: true)
-        
-
-        
-        presenter?.saveData(pokemon: pokeS!)
+        presenter?.saveData(pokemon: presenter!.pokeS!)
     
     }
-    
-    
-    
-    
-    
+  
     
     @IBAction func goFavorite(_ sender: Any) {
         presenter?.goFavorite()
-        
     }
-    
-    
 }
 
-
-    
-
-
 extension DetailView: DetailViewProtocol {
+   
     func cargarActivity() {
         DispatchQueue.main.async {
             self.aivActivity.startAnimating()
@@ -102,7 +73,7 @@ extension DetailView: DetailViewProtocol {
         lblDefence.text = String(poke.defense)
         txvDescription.text = poke.description
         
-        pokeS = poke
+        presenter?.pokeS = poke
         
         guard let url = URL(string: poke.imageUrl )  else {return}
         do{

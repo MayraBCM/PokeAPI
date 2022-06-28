@@ -10,9 +10,6 @@ import Foundation
 import UIKit
 
 class FavoriteWireFrame: FavoriteWireFrameProtocol {
-    
-    
-
     class func createFavoriteModule() -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "FavoriteView")
         if let view = navController as? FavoriteView {
@@ -42,8 +39,7 @@ class FavoriteWireFrame: FavoriteWireFrameProtocol {
     }
     
     func showDetailPokemonView(from view: FavoriteViewProtocol, fav: favorite) {
-      
         
     }
-    
 }
+

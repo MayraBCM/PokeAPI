@@ -24,7 +24,7 @@
                                         <rect key="frame" x="132" y="8" width="175" height="46"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="favorito"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="anadir" title=""/>
                                         <connections>
                                             <action selector="addFavorite:" destination="9Xz-tb-M5m" eventType="touchUpInside" id="QgG-OI-Swi"/>
                                         </connections>
@@ -184,7 +184,7 @@
     <resources>
         <image name="PokeBola" width="333" height="213"/>
         <image name="PokeBola2" width="355" height="206"/>
-        <image name="favorito" width="32" height="32"/>
+        <image name="anadir" width="32" height="32"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

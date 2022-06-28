@@ -14,11 +14,12 @@ class HomeInteractor: HomeInteractorInputProtocol {
     var localDatamanager: HomeLocalDataManagerInputProtocol?
     var remoteDatamanager: HomeRemoteDataManagerInputProtocol?
     
-    var  arrPokemon = [Pokemon_Struct]()
+    var arrListaPoke = [Pokemon_Struct]()
 
     
     func interactorGetData() {
         remoteDatamanager?.externalGetData()
+        
     }
 
 }
@@ -31,7 +32,4 @@ extension HomeInteractor: HomeRemoteDataManagerOutputProtocol {
         
     }
     
-
-    
-   
 }

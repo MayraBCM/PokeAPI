@@ -13,6 +13,7 @@ protocol HomeViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: HomePresenterProtocol? { get set }
     func presenterPushDataView(with data: [Pokemon_Struct])
+    
 }
 
 protocol HomeWireFrameProtocol: AnyObject {
@@ -30,16 +31,16 @@ protocol HomePresenterProtocol: AnyObject {
     var interactor: HomeInteractorInputProtocol? { get set }
     var wireFrame: HomeWireFrameProtocol? { get set }
     func showDataDetail(poke: Pokemon_Struct)
-
-    
+    var arrListaPoke : [Pokemon_Struct]! {get set}
     
     func viewDidLoad()
 }
 
 protocol HomeInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
-    
+     
     func interactorPushDataPresenter(with data: [Pokemon_Struct])
+    func pokemon(poke: Pokemon_Struct)
 }
 
 protocol HomeInteractorInputProtocol: AnyObject {

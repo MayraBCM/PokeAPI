@@ -15,6 +15,8 @@ protocol DetailViewProtocol: AnyObject {
     func getDataPoke(poke: Pokemon_Struct)
     func cargarActivity()
     func stopAndHideActivity()
+   
+   
   
    
 }
@@ -32,14 +34,20 @@ protocol DetailPresenterProtocol: AnyObject {
     var interactor: DetailInteractorInputProtocol? { get set }
     var wireFrame: DetailWireFrameProtocol? { get set }
     var datoRecibido : Pokemon_Struct? {get set}
+    var btnFav: Bool { get set }
+    var pokeS : Pokemon_Struct! {get set}
+    var nombreImage : String { get set }
+    var nombreImage2 : String {get set}
     func saveData(pokemon : Pokemon_Struct)
     func goFavorite()
-    
+   
     func viewDidLoad()
 }
 
 protocol DetailInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
+   
+    
 }
 
 protocol DetailInteractorInputProtocol: AnyObject {

@@ -54,7 +54,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XsV-1C-8JD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="HomeView" automaticallyAdjustsScrollViewInsets="NO" id="kVf-Z6-5ta" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="5Ug-Cz-I4Z"/>
+                    <tabBarItem key="tabBarItem" title="Item" selectedImage="hogar-ecologico" id="5Ug-Cz-I4Z"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BbY-oh-LQ8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -70,6 +70,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="hogar-ecologico" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -11,8 +11,8 @@ import Foundation
 class DetailInteractor: DetailInteractorInputProtocol {
     
    
-    
-    
+    var strImageFav = "fav.png"
+    var strImageFav2 = "Favorito1.png"
    
     // MARK: Properties
     weak var presenter: DetailInteractorOutputProtocol?
@@ -23,6 +23,7 @@ class DetailInteractor: DetailInteractorInputProtocol {
     func saveData(pokemon: Pokemon_Struct) {
         localDatamanager?.saveData(pokemon: pokemon)
     }
+    
     
 
 }

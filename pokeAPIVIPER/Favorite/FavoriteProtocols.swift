@@ -19,6 +19,7 @@ protocol FavoriteWireFrameProtocol: AnyObject{
     // PRESENTER -> WIREFRAME
     static func createFavoriteModule() -> UIViewController
     func showDetailPokemonView(from view: FavoriteViewProtocol, fav: favorite)
+   
 }
 
 protocol FavoritePresenterProtocol: AnyObject {
@@ -27,7 +28,7 @@ protocol FavoritePresenterProtocol: AnyObject {
     var interactor: FavoriteInteractorInputProtocol? { get set }
     var wireFrame: FavoriteWireFrameProtocol? { get set }
     func showDataDetail(fav: favorite)
-    
+    var arrFavoritos : [favorite]! { get set }
     func viewDidLoad()
 }
 

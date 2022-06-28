@@ -14,35 +14,27 @@ class HomePresenter  {
     weak var view: HomeViewProtocol?
     var interactor: HomeInteractorInputProtocol?
     var wireFrame: HomeWireFrameProtocol?
-    
+    var arrListaPoke : [Pokemon_Struct]!
 }
 
 extension HomePresenter: HomePresenterProtocol {
-    
     func showDataDetail(poke: Pokemon_Struct) {
         wireFrame?.showDetailPokemonView(from: view!, poke: poke)
     }
-    
-  
-    
-    
-    
-   
-    func viewDidLoad() {
+func viewDidLoad() {
         interactor?.interactorGetData()
     }
     
 }
 
-
 extension HomePresenter: HomeInteractorOutputProtocol {
+    func pokemon(poke: Pokemon_Struct) {
+        
+    }
     func interactorPushDataPresenter(with data: [Pokemon_Struct]) {
         view?.presenterPushDataView(with: data)
        
         
     }
-    
-  
-    
-    
+   
 }

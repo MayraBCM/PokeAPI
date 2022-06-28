@@ -9,12 +9,15 @@
 import Foundation
 
 class DetailPresenter : DetailPresenterProtocol  {
+    
   
   
 
     var datoRecibido: Pokemon_Struct?
-    var idPokemon :Int?
-    
+    var btnFav: Bool = true
+    var pokeS : Pokemon_Struct!
+    var nombreImage = "anadir.png"
+    var nombreImage2 = "Favorito1.png"
     // MARK: Properties
     weak var view: DetailViewProtocol?
     var interactor: DetailInteractorInputProtocol?
@@ -42,5 +45,9 @@ class DetailPresenter : DetailPresenterProtocol  {
 }
 
 extension DetailPresenter: DetailInteractorOutputProtocol {
+    }
+    
+    
+    
    
-}
+

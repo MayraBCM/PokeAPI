@@ -14,20 +14,18 @@ class FavoritePresenter  {
     weak var view: FavoriteViewProtocol?
     var interactor: FavoriteInteractorInputProtocol?
     var wireFrame: FavoriteWireFrameProtocol?
-    
+    var arrFavoritos: [favorite]!
 }
 
 extension FavoritePresenter: FavoritePresenterProtocol {
-   
-    
-    func viewDidLoad() {
-        interactor?.dataLocal()
-    }
-    
+ 
     func showDataDetail(fav: favorite) {
         wireFrame?.showDetailPokemonView(from: view!, fav: fav)
     }
     
+    func viewDidLoad() {
+        interactor?.dataLocal()
+    }
 }
 
 extension FavoritePresenter: FavoriteInteractorOutputProtocol {

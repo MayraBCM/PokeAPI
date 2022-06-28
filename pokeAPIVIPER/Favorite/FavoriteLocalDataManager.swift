@@ -11,17 +11,16 @@ import CoreData
 import UIKit
 
 class FavoriteLocalDataManager:FavoriteLocalDataManagerInputProtocol {
-   
-    
-
+    func eliminarData() {
+        
+    }
     var interactor: FavoriteLocalDataManagerOutputProtocol?
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
        
     var favorit: [favorite]? = []
-  
-   
+
     var attack: Int?
     var defense: Int?
     var desc: String?
@@ -39,8 +38,7 @@ class FavoriteLocalDataManager:FavoriteLocalDataManagerInputProtocol {
                 let result = try context.fetch(request)
                 for data in result as! [NSManagedObject]
                 {
-                   
-                   
+    
                     self.attack = data.value(forKey: "attack")! as? Int
                     self.defense = data.value(forKey: "defense")! as? Int
                     self.desc = data.value(forKey: "desc")! as? String
@@ -62,34 +60,24 @@ class FavoriteLocalDataManager:FavoriteLocalDataManagerInputProtocol {
         }
     
     
-    func eliminarData() {
+    func eliminarData(data : [NSManagedObject]) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorite")
-            request.predicate = NSPredicate(format: "id = %@", "0")
-        request.returnsObjectsAsFaults = false
-        do {
-                let result = try context.fetch(request)
-            print(result)
-                for data in result as! [NSManagedObject]
-                        
-        {
-            context.delete(data)
-                    
+        for dato in data {
+            context.delete(dato)
             do {
-                try context.save()
-                }
-                catch {
-                }
-        }
+            try context.save()
 
-        } catch {
+            }
+            catch {
 
-                print("Failed")
+            }
         }
+        
+    }
     }
     
-    }
+    
 
     
    

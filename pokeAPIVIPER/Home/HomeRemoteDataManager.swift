@@ -11,12 +11,7 @@ import Foundation
 class HomeRemoteDataManager:HomeRemoteDataManagerInputProtocol {
     
     var remoteRequestHandler: HomeRemoteDataManagerOutputProtocol?
-    
-   
     var dataPoke = [Pokemon_Struct]()
-    
-   
-    
     func externalGetData() {
         let urlString = "https://pokedex-bb36f.firebaseio.com/pokemon.json"
         
@@ -25,7 +20,6 @@ class HomeRemoteDataManager:HomeRemoteDataManagerInputProtocol {
             
             let tarea = session.dataTask(with: url) { datos, respuesta, error in
                 if error != nil {
-//                print("Error al obtener datos de la API: ",error?.localizedDescription)
                 }
                 
                 if let datosSeguros = datos?.parseData(quitarString: "null,"){
@@ -33,9 +27,7 @@ class HomeRemoteDataManager:HomeRemoteDataManagerInputProtocol {
                         print("Lista pokemon: ", listaPokemon)
                         
                         self.remoteRequestHandler?.remoteDataManagerCallBackData(with: listaPokemon)
-                        
 
-                       
                     }
                 }
             }
@@ -50,11 +42,6 @@ class HomeRemoteDataManager:HomeRemoteDataManagerInputProtocol {
             let decodificador = JSONDecoder()
             do{
                 let datosDecodificados = try decodificador.decode([Pokemon_Struct].self, from: datosPokemon)
-                
-               
-                
-               
-                
                 return datosDecodificados
                 
             }catch {
