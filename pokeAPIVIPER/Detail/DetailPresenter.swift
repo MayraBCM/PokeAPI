@@ -10,9 +10,6 @@ import Foundation
 
 class DetailPresenter : DetailPresenterProtocol  {
     
-  
-  
-
     var datoRecibido: Pokemon_Struct?
     var btnFav: Bool = true
     var pokeS : Pokemon_Struct!

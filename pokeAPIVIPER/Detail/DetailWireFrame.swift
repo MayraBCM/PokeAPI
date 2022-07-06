@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 
 class DetailWireFrame: DetailWireFrameProtocol {
- 
-
+   
     static func createDetailModule(poke: Pokemon_Struct) -> UIViewController {
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "DetailView")
         if let view = viewController as? DetailView {

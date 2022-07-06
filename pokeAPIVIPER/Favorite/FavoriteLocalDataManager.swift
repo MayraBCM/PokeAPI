@@ -20,7 +20,7 @@ class FavoriteLocalDataManager:FavoriteLocalDataManagerInputProtocol {
         
        
     var favorit: [favorite]? = []
-
+    var id : Int?
     var attack: Int?
     var defense: Int?
     var desc: String?
@@ -38,14 +38,14 @@ class FavoriteLocalDataManager:FavoriteLocalDataManagerInputProtocol {
                 let result = try context.fetch(request)
                 for data in result as! [NSManagedObject]
                 {
-    
+                    self.id = data.value(forKey: "id")! as? Int
                     self.attack = data.value(forKey: "attack")! as? Int
                     self.defense = data.value(forKey: "defense")! as? Int
                     self.desc = data.value(forKey: "desc")! as? String
                     self.name = data.value(forKey: "name")! as? String
                     self.imageUrl = data.value(forKey: "image")! as? String
                    
-                    let fav = favorite(attack: attack!, defense: defense!, desc: desc!, name: name!, imageUrl: imageUrl!)
+                    let fav = favorite(attack: attack!, defense: defense!, desc: desc!, name: name!, imageUrl: imageUrl!, id: id!)
                     
                     self.favorit?.append(fav)
                     
@@ -60,21 +60,7 @@ class FavoriteLocalDataManager:FavoriteLocalDataManagerInputProtocol {
         }
     
     
-    func eliminarData(data : [NSManagedObject]) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        for dato in data {
-            context.delete(dato)
-            do {
-            try context.save()
-
-            }
-            catch {
-
-            }
-        }
-        
-    }
+   
     }
     
     

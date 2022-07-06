@@ -40,7 +40,7 @@ class func createHomeModule() -> UIViewController {
     
     
     func showDetailPokemonView(from view: HomeViewProtocol, poke: Pokemon_Struct) {
-        let newDetailView = DetailWireFrame.createDetailModule(poke :poke)
+        let newDetailView = DetailWireFrame.createDetailModule(poke: poke)
         if let newView = view as? UIViewController{
             newView.navigationController?.pushViewController(newDetailView, animated: true)
         

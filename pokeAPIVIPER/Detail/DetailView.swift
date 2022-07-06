@@ -41,7 +41,7 @@ class DetailView: UIViewController {
         }
         
         presenter?.saveData(pokemon: presenter!.pokeS!)
-    
+        
     }
   
     

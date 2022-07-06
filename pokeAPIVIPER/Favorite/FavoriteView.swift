@@ -27,10 +27,8 @@ class FavoriteView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
-        
+       
     }
-    
-    @IBOutlet weak var btnRemove: UICollectionView!
     
 }
 
@@ -68,10 +66,11 @@ extension FavoriteView : UICollectionViewDataSource{
 
 extension FavoriteView : UICollectionViewDelegate{
     
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         presenter?.showDataDetail(fav: (presenter?.arrFavoritos[indexPath.row])!)
+        
     }
-    
     
 }

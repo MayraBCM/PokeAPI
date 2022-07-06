@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0BFEC912876296800ABC14D /* FavoriteDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BFEC8A2876296800ABC14D /* FavoriteDetailPresenter.swift */; };
+		D0BFEC922876296800ABC14D /* FavoriteDetailLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BFEC8B2876296800ABC14D /* FavoriteDetailLocalDataManager.swift */; };
+		D0BFEC932876296800ABC14D /* FavoriteDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BFEC8C2876296800ABC14D /* FavoriteDetailProtocols.swift */; };
+		D0BFEC942876296800ABC14D /* FavoriteDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BFEC8D2876296800ABC14D /* FavoriteDetailInteractor.swift */; };
+		D0BFEC952876296800ABC14D /* FavoriteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BFEC8E2876296800ABC14D /* FavoriteDetailView.swift */; };
+		D0BFEC962876296800ABC14D /* FavoriteDetailRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BFEC8F2876296800ABC14D /* FavoriteDetailRemoteDataManager.swift */; };
+		D0BFEC972876296800ABC14D /* FavoriteDetailWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BFEC902876296800ABC14D /* FavoriteDetailWireFrame.swift */; };
+		D0BFEC9928762BB100ABC14D /* FavoriteDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0BFEC9828762BB100ABC14D /* FavoriteDetail.storyboard */; };
 		EE1B23C82858F39C006D8769 /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1B23C72858F39C006D8769 /* DetailView.storyboard */; };
 		EE1B23CA2859020D006D8769 /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1B23C92859020D006D8769 /* HomeView.storyboard */; };
 		EE1EF40C2853C55200AE947C /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1EF4052853C55200AE947C /* DetailPresenter.swift */; };
@@ -43,6 +51,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D0BFEC8A2876296800ABC14D /* FavoriteDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailPresenter.swift; sourceTree = "<group>"; };
+		D0BFEC8B2876296800ABC14D /* FavoriteDetailLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailLocalDataManager.swift; sourceTree = "<group>"; };
+		D0BFEC8C2876296800ABC14D /* FavoriteDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailProtocols.swift; sourceTree = "<group>"; };
+		D0BFEC8D2876296800ABC14D /* FavoriteDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailInteractor.swift; sourceTree = "<group>"; };
+		D0BFEC8E2876296800ABC14D /* FavoriteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailView.swift; sourceTree = "<group>"; };
+		D0BFEC8F2876296800ABC14D /* FavoriteDetailRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailRemoteDataManager.swift; sourceTree = "<group>"; };
+		D0BFEC902876296800ABC14D /* FavoriteDetailWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailWireFrame.swift; sourceTree = "<group>"; };
+		D0BFEC9828762BB100ABC14D /* FavoriteDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoriteDetail.storyboard; sourceTree = "<group>"; };
 		EE1B23C72858F39C006D8769 /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
 		EE1B23C92859020D006D8769 /* HomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
 		EE1EF4052853C55200AE947C /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
@@ -91,6 +107,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D0BFEC892876292B00ABC14D /* FavoriteDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D0BFEC8A2876296800ABC14D /* FavoriteDetailPresenter.swift */,
+				D0BFEC8B2876296800ABC14D /* FavoriteDetailLocalDataManager.swift */,
+				D0BFEC8C2876296800ABC14D /* FavoriteDetailProtocols.swift */,
+				D0BFEC8D2876296800ABC14D /* FavoriteDetailInteractor.swift */,
+				D0BFEC8E2876296800ABC14D /* FavoriteDetailView.swift */,
+				D0BFEC8F2876296800ABC14D /* FavoriteDetailRemoteDataManager.swift */,
+				D0BFEC902876296800ABC14D /* FavoriteDetailWireFrame.swift */,
+				D0BFEC9828762BB100ABC14D /* FavoriteDetail.storyboard */,
+			);
+			path = FavoriteDetail;
+			sourceTree = "<group>";
+		};
 		EE66DAAA2853A3AC00E604FC = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +141,7 @@
 		EE66DAB52853A3AC00E604FC /* pokeAPIVIPER */ = {
 			isa = PBXGroup;
 			children = (
+				D0BFEC892876292B00ABC14D /* FavoriteDetail */,
 				EED89178285B930000E63A9E /* Favorite */,
 				EE66DAF02853B9F800E604FC /* Detail */,
 				EE66DADF2853B22400E604FC /* Home */,
@@ -235,6 +267,7 @@
 				EE66DAC32853A3AC00E604FC /* LaunchScreen.storyboard in Resources */,
 				EED8918A285BF75400E63A9E /* Favorite.storyboard in Resources */,
 				EE66DAC02853A3AC00E604FC /* Assets.xcassets in Resources */,
+				D0BFEC9928762BB100ABC14D /* FavoriteDetail.storyboard in Resources */,
 				EE1B23C82858F39C006D8769 /* DetailView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE66DABB2853A3AC00E604FC /* ViewController.swift in Sources */,
+				D0BFEC952876296800ABC14D /* FavoriteDetailView.swift in Sources */,
 				EE1EF40D2853C55200AE947C /* DetailLocalDataManager.swift in Sources */,
 				EE66DAB72853A3AC00E604FC /* AppDelegate.swift in Sources */,
 				EED89186285BF42500E63A9E /* FavoriteView.swift in Sources */,
@@ -255,6 +289,8 @@
 				EED89182285BF42500E63A9E /* FavoritePresenter.swift in Sources */,
 				EE6817C628637DF00049083E /* favorite.swift in Sources */,
 				EED89188285BF42500E63A9E /* FavoriteWireFrame.swift in Sources */,
+				D0BFEC942876296800ABC14D /* FavoriteDetailInteractor.swift in Sources */,
+				D0BFEC962876296800ABC14D /* FavoriteDetailRemoteDataManager.swift in Sources */,
 				EE66DAB92853A3AC00E604FC /* SceneDelegate.swift in Sources */,
 				EE66DAE92853B24000E604FC /* HomeProtocols.swift in Sources */,
 				EE1EF40F2853C55200AE947C /* DetailInteractor.swift in Sources */,
@@ -263,12 +299,16 @@
 				EE66DAF22853BD3600E604FC /* Pokemon.swift in Sources */,
 				EED89185285BF42500E63A9E /* FavoriteInteractor.swift in Sources */,
 				EE1EF4102853C55200AE947C /* DetailView.swift in Sources */,
+				D0BFEC922876296800ABC14D /* FavoriteDetailLocalDataManager.swift in Sources */,
+				D0BFEC932876296800ABC14D /* FavoriteDetailProtocols.swift in Sources */,
 				EE66DAEC2853B24000E604FC /* HomeRemoteDataManager.swift in Sources */,
 				EED89183285BF42500E63A9E /* FavoriteLocalDataManager.swift in Sources */,
 				EED89187285BF42500E63A9E /* FavoriteRemoteDataManager.swift in Sources */,
 				EE66DAE72853B24000E604FC /* HomePresenter.swift in Sources */,
 				EE1EF40E2853C55200AE947C /* DetailProtocols.swift in Sources */,
+				D0BFEC972876296800ABC14D /* FavoriteDetailWireFrame.swift in Sources */,
 				EE6817C428624C730049083E /* Pokemon.xcdatamodeld in Sources */,
+				D0BFEC912876296800ABC14D /* FavoriteDetailPresenter.swift in Sources */,
 				EE66DAEA2853B24000E604FC /* remoteDataManagerCallBackData.swift in Sources */,
 				EE1EF4122853C55200AE947C /* DetailWireFrame.swift in Sources */,
 				EE66DAED2853B24000E604FC /* HomeWireFrame.swift in Sources */,

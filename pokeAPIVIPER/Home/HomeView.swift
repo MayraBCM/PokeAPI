@@ -9,6 +9,14 @@
 import Foundation
 import UIKit
 
+class viewCell : UITableViewCell{
+
+    @IBOutlet weak var lblNombre : UILabel!
+    
+    @IBOutlet weak var imvImage: UIImageView!    
+    }
+
+
 class HomeView: UIViewController {
 
  var presenter: HomePresenterProtocol?
@@ -42,9 +50,22 @@ extension HomeView : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! viewCell
         
-        cell.textLabel?.text = presenter?.arrListaPoke[indexPath.row].name
+        cell.lblNombre.text = presenter?.arrListaPoke[indexPath.row].name
+    
+         let url = URL(string: presenter?.arrListaPoke[indexPath.row].imageUrl ?? "")
+        do{
+            let data = try Data(contentsOf: url!)
+            DispatchQueue.main.async {
+                cell.imvImage?.image = UIImage(data: data)
+                
+            }
+        }catch{
+            print("Error Image Detail from url")
+            
+    }
+        
         return cell
     }
 }

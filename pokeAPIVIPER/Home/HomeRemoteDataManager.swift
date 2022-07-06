@@ -11,7 +11,7 @@ import Foundation
 class HomeRemoteDataManager:HomeRemoteDataManagerInputProtocol {
     
     var remoteRequestHandler: HomeRemoteDataManagerOutputProtocol?
-    var dataPoke = [Pokemon_Struct]()
+   // var dataPoke = [Pokemon_Struct]()
     func externalGetData() {
         let urlString = "https://pokedex-bb36f.firebaseio.com/pokemon.json"
         
