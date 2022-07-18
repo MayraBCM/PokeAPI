@@ -15,10 +15,8 @@ protocol DetailViewProtocol: AnyObject {
     func getDataPoke(poke: Pokemon_Struct)
     func cargarActivity()
     func stopAndHideActivity()
-   
-   
+    func setImageBtn(image: UIImage?)
   
-   
 }
 
 protocol DetailWireFrameProtocol: AnyObject {
@@ -33,21 +31,17 @@ protocol DetailPresenterProtocol: AnyObject {
     var view: DetailViewProtocol? { get set }
     var interactor: DetailInteractorInputProtocol? { get set }
     var wireFrame: DetailWireFrameProtocol? { get set }
-    var datoRecibido : Pokemon_Struct? {get set}
-    var btnFav: Bool { get set }
-    var pokeS : Pokemon_Struct! {get set}
-    var nombreImage : String { get set }
-    var nombreImage2 : String {get set}
-    func saveData(pokemon : Pokemon_Struct)
+    func saveData()
     func goFavorite()
    
+    
     func viewDidLoad()
 }
 
 protocol DetailInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
+    func changeFav(image: UIImage?)
    
-    
 }
 
 protocol DetailInteractorInputProtocol: AnyObject {
@@ -55,8 +49,10 @@ protocol DetailInteractorInputProtocol: AnyObject {
     var presenter: DetailInteractorOutputProtocol? { get set }
     var localDatamanager: DetailLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: DetailRemoteDataManagerInputProtocol? { get set }
-    
     func saveData(pokemon : Pokemon_Struct)
+    func saveData()
+    var entity: DetailEntity? {get set}
+    var entityPokemon : Pokemon_Struct? {get set}
    
 }
 
@@ -67,16 +63,19 @@ protocol DetailDataManagerInputProtocol: AnyObject {
 protocol DetailRemoteDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: DetailRemoteDataManagerOutputProtocol? { get set }
+   
     
 }
 
 protocol DetailRemoteDataManagerOutputProtocol: AnyObject {
     // REMOTEDATAMANAGER -> INTERACTOR
+    
 
 }
 
 protocol DetailLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
     func saveData(pokemon : Pokemon_Struct)
+    
     
 }

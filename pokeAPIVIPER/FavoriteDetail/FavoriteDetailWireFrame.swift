@@ -10,12 +10,13 @@ import Foundation
 import UIKit
 
 class FavoriteDetailWireFrame: FavoriteDetailWireFrameProtocol {
+   
 
     class func createFavoriteDetailModule(fav: favorite) -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "FavoriteDetailView")
         if let view = navController as? FavoriteDetailView {
             let presenter: FavoriteDetailPresenterProtocol & FavoriteDetailInteractorOutputProtocol = FavoriteDetailPresenter()
-            let interactor: FavoriteDetailInteractorInputProtocol & FavoriteDetailRemoteDataManagerOutputProtocol = FavoriteDetailInteractor()
+            let interactor: FavoriteDetailInteractorInputProtocol & FavoriteDetailRemoteDataManagerOutputProtocol & FavoriteDetailLocalDataManagerOutputProtocol = FavoriteDetailInteractor()
             let localDataManager: FavoriteDetailLocalDataManagerInputProtocol = FavoriteDetailLocalDataManager()
             let remoteDataManager: FavoriteDetailRemoteDataManagerInputProtocol = FavoriteDetailRemoteDataManager()
             let wireFrame: FavoriteDetailWireFrameProtocol = FavoriteDetailWireFrame()
@@ -25,10 +26,11 @@ class FavoriteDetailWireFrame: FavoriteDetailWireFrameProtocol {
             presenter.wireFrame = wireFrame
             presenter.interactor = interactor
             interactor.presenter = presenter
-            presenter.datoReFav = fav
+            interactor.entityFav = fav
             interactor.localDatamanager = localDataManager
             interactor.remoteDatamanager = remoteDataManager
             remoteDataManager.remoteRequestHandler = interactor
+            localDataManager.localRequestHandler = interactor
             
             return navController
         }
@@ -39,4 +41,11 @@ class FavoriteDetailWireFrame: FavoriteDetailWireFrameProtocol {
         return UIStoryboard(name: "FavoriteDetail", bundle: Bundle.main)
     }
     
+    func presenterFavoriteView(from view: FavoriteDetailViewProtocol) {
+        let newDetailFavorite = FavoriteWireFrame.createFavoriteModule()
+        if let newView = view as? UIViewController{
+            newView.navigationController?.pushViewController(newDetailFavorite, animated: true)
+    }
+    }
+   
 }

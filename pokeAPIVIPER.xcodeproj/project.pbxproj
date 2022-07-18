@@ -26,7 +26,6 @@
 		EE1EF4122853C55200AE947C /* DetailWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1EF40B2853C55200AE947C /* DetailWireFrame.swift */; };
 		EE66DAB72853A3AC00E604FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE66DAB62853A3AC00E604FC /* AppDelegate.swift */; };
 		EE66DAB92853A3AC00E604FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE66DAB82853A3AC00E604FC /* SceneDelegate.swift */; };
-		EE66DABB2853A3AC00E604FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE66DABA2853A3AC00E604FC /* ViewController.swift */; };
 		EE66DAC02853A3AC00E604FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE66DABF2853A3AC00E604FC /* Assets.xcassets */; };
 		EE66DAC32853A3AC00E604FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE66DAC12853A3AC00E604FC /* LaunchScreen.storyboard */; };
 		EE66DAE72853B24000E604FC /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE66DAE02853B24000E604FC /* HomePresenter.swift */; };
@@ -48,6 +47,8 @@
 		EED89187285BF42500E63A9E /* FavoriteRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED89180285BF42500E63A9E /* FavoriteRemoteDataManager.swift */; };
 		EED89188285BF42500E63A9E /* FavoriteWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED89181285BF42500E63A9E /* FavoriteWireFrame.swift */; };
 		EED8918A285BF75400E63A9E /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EED89189285BF75400E63A9E /* Favorite.storyboard */; };
+		EEF370E9287C8E09006B7151 /* FavoriteDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF370E8287C8E09006B7151 /* FavoriteDetailEntity.swift */; };
+		EEF370EB287C8EF3006B7151 /* DetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF370EA287C8EF3006B7151 /* DetailEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,7 +72,6 @@
 		EE66DAB32853A3AC00E604FC /* pokeAPIVIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokeAPIVIPER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE66DAB62853A3AC00E604FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE66DAB82853A3AC00E604FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EE66DABA2853A3AC00E604FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EE66DABF2853A3AC00E604FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE66DAC22853A3AC00E604FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE66DAC42853A3AC00E604FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,6 +94,8 @@
 		EED89180285BF42500E63A9E /* FavoriteRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRemoteDataManager.swift; sourceTree = "<group>"; };
 		EED89181285BF42500E63A9E /* FavoriteWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteWireFrame.swift; sourceTree = "<group>"; };
 		EED89189285BF75400E63A9E /* Favorite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorite.storyboard; sourceTree = "<group>"; };
+		EEF370E8287C8E09006B7151 /* FavoriteDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailEntity.swift; sourceTree = "<group>"; };
+		EEF370EA287C8EF3006B7151 /* DetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				D0BFEC8F2876296800ABC14D /* FavoriteDetailRemoteDataManager.swift */,
 				D0BFEC902876296800ABC14D /* FavoriteDetailWireFrame.swift */,
 				D0BFEC9828762BB100ABC14D /* FavoriteDetail.storyboard */,
+				EEF370E8287C8E09006B7151 /* FavoriteDetailEntity.swift */,
 			);
 			path = FavoriteDetail;
 			sourceTree = "<group>";
@@ -147,7 +150,6 @@
 				EE66DADF2853B22400E604FC /* Home */,
 				EE66DAB62853A3AC00E604FC /* AppDelegate.swift */,
 				EE66DAB82853A3AC00E604FC /* SceneDelegate.swift */,
-				EE66DABA2853A3AC00E604FC /* ViewController.swift */,
 				EE66DABF2853A3AC00E604FC /* Assets.xcassets */,
 				EE66DAC12853A3AC00E604FC /* LaunchScreen.storyboard */,
 				EE66DAC42853A3AC00E604FC /* Info.plist */,
@@ -184,6 +186,7 @@
 				EE1EF4082853C55200AE947C /* DetailInteractor.swift */,
 				EE1EF40A2853C55200AE947C /* DetailRemoteDataManager.swift */,
 				EE1EF40B2853C55200AE947C /* DetailWireFrame.swift */,
+				EEF370EA287C8EF3006B7151 /* DetailEntity.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -279,7 +282,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE66DABB2853A3AC00E604FC /* ViewController.swift in Sources */,
 				D0BFEC952876296800ABC14D /* FavoriteDetailView.swift in Sources */,
 				EE1EF40D2853C55200AE947C /* DetailLocalDataManager.swift in Sources */,
 				EE66DAB72853A3AC00E604FC /* AppDelegate.swift in Sources */,
@@ -299,10 +301,12 @@
 				EE66DAF22853BD3600E604FC /* Pokemon.swift in Sources */,
 				EED89185285BF42500E63A9E /* FavoriteInteractor.swift in Sources */,
 				EE1EF4102853C55200AE947C /* DetailView.swift in Sources */,
+				EEF370E9287C8E09006B7151 /* FavoriteDetailEntity.swift in Sources */,
 				D0BFEC922876296800ABC14D /* FavoriteDetailLocalDataManager.swift in Sources */,
 				D0BFEC932876296800ABC14D /* FavoriteDetailProtocols.swift in Sources */,
 				EE66DAEC2853B24000E604FC /* HomeRemoteDataManager.swift in Sources */,
 				EED89183285BF42500E63A9E /* FavoriteLocalDataManager.swift in Sources */,
+				EEF370EB287C8EF3006B7151 /* DetailEntity.swift in Sources */,
 				EED89187285BF42500E63A9E /* FavoriteRemoteDataManager.swift in Sources */,
 				EE66DAE72853B24000E604FC /* HomePresenter.swift in Sources */,
 				EE1EF40E2853C55200AE947C /* DetailProtocols.swift in Sources */,

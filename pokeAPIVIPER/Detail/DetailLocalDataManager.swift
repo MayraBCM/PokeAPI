@@ -11,7 +11,6 @@ import UIKit
 import CoreData
 
 class DetailLocalDataManager:DetailLocalDataManagerInputProtocol {
-    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var id: Int?
@@ -22,9 +21,6 @@ class DetailLocalDataManager:DetailLocalDataManagerInputProtocol {
     var imageUrl: String?
     var type: String?
 
-        
-
-    
     func saveData(pokemon: Pokemon_Struct) {
        
         let context = appDelegate.persistentContainer.viewContext
@@ -36,8 +32,6 @@ class DetailLocalDataManager:DetailLocalDataManagerInputProtocol {
         newFavorite.setValue(pokemon.name, forKey: "name")
         newFavorite.setValue(pokemon.imageUrl, forKey: "image")
         newFavorite.setValue(pokemon.type, forKey: "type")
-                
-               
                 do {
                   try context.save()
                     

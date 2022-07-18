@@ -24,7 +24,7 @@ class DetailWireFrame: DetailWireFrameProtocol {
             presenter.view = view
             presenter.wireFrame = wireFrame
             presenter.interactor = interactor
-            presenter.datoRecibido = poke
+            interactor.entityPokemon = poke
             interactor.presenter = presenter
             interactor.localDatamanager = localDataManager
             interactor.remoteDatamanager = remoteDataManager

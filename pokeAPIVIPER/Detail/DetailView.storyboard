@@ -116,6 +116,15 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXR-l2-FEj">
+                                        <rect key="frame" x="232" y="62" width="47" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Fav"/>
+                                        <connections>
+                                            <action selector="goFavorite:" destination="9Xz-tb-M5m" eventType="touchUpInside" id="cPM-vB-Cht"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="bhT-Ap-OQh" secondAttribute="trailing" constant="20" id="28z-xR-HWa"/>

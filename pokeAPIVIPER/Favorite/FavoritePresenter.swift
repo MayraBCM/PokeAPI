@@ -18,13 +18,9 @@ class FavoritePresenter  {
 }
 
 extension FavoritePresenter: FavoritePresenterProtocol {
-    func showDataDetail(fav: favorite) {
+      func showDataDetail(fav: favorite) {
         wireFrame?.showDetailPokemonView(from: view!, fav: fav)
     }
-    
-    
-   
-    
     func viewDidLoad() {
         interactor?.dataLocal()
     }

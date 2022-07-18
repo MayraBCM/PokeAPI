@@ -20,7 +20,7 @@ class DetailView: UIViewController {
     @IBOutlet weak var aivActivity: UIActivityIndicatorView!
     
     @IBOutlet weak var txvDescription: UITextView!
-  
+    
     var presenter: DetailPresenterProtocol?
 
     override func viewDidLoad() {
@@ -32,15 +32,7 @@ class DetailView: UIViewController {
     
 
     @IBAction func addFavorite(_ sender: UIButton) {
-        
-        presenter!.btnFav = !presenter!.btnFav
-        if (presenter!.btnFav == true){
-            btnFavorite.setImage(UIImage(named: presenter?.nombreImage ?? ""), for: .normal)
-        }else{
-            btnFavorite.setImage(UIImage(named: presenter?.nombreImage2 ?? ""), for: .normal)
-        }
-        
-        presenter?.saveData(pokemon: presenter!.pokeS!)
+          presenter?.saveData()
         
     }
   
@@ -51,8 +43,7 @@ class DetailView: UIViewController {
 }
 
 extension DetailView: DetailViewProtocol {
-   
-    func cargarActivity() {
+          func cargarActivity() {
         DispatchQueue.main.async {
             self.aivActivity.startAnimating()
         }
@@ -73,7 +64,7 @@ extension DetailView: DetailViewProtocol {
         lblDefence.text = String(poke.defense)
         txvDescription.text = poke.description
         
-        presenter?.pokeS = poke
+        presenter?.interactor?.entity?.pokeS = poke
         
         guard let url = URL(string: poke.imageUrl )  else {return}
         do{
@@ -89,7 +80,11 @@ extension DetailView: DetailViewProtocol {
         
     }
   
-   
+    func setImageBtn(image: UIImage?){
+        if let image = image {
+            btnFavorite.setImage(image, for: .normal)
+        }
+    }
   
     
    

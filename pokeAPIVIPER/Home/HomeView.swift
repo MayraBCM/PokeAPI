@@ -32,7 +32,6 @@ class HomeView: UIViewController {
 }
 
 extension HomeView: HomeViewProtocol {
-   
     
     func presenterPushDataView(with data: [Pokemon_Struct]) {
         presenter?.arrListaPoke = data
@@ -53,8 +52,9 @@ extension HomeView : UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! viewCell
         
         cell.lblNombre.text = presenter?.arrListaPoke[indexPath.row].name
+        
     
-         let url = URL(string: presenter?.arrListaPoke[indexPath.row].imageUrl ?? "")
+        let url = URL(string: presenter?.arrListaPoke[indexPath.row].imageUrl ?? "")
         do{
             let data = try Data(contentsOf: url!)
             DispatchQueue.main.async {

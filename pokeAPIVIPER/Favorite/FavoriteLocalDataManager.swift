@@ -11,9 +11,6 @@ import CoreData
 import UIKit
 
 class FavoriteLocalDataManager:FavoriteLocalDataManagerInputProtocol {
-    func eliminarData() {
-        
-    }
     var interactor: FavoriteLocalDataManagerOutputProtocol?
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate

@@ -7,16 +7,21 @@
 //
 
 import Foundation
+import CoreData
 
 class FavoriteDetailInteractor: FavoriteDetailInteractorInputProtocol {
-    func eliminate(id: Int) {
+   var entityFav: favorite?
+    
+   var entity: FavoriteDetailEntity?
+    
+ 
+   func eliminate(id: Int) {
         localDatamanager?.deleteData(id: id)
     }
-    
-    
-    
 
-    // MARK: Properties
+    
+  
+ // MARK: Properties
     weak var presenter: FavoriteDetailInteractorOutputProtocol?
     var localDatamanager: FavoriteDetailLocalDataManagerInputProtocol?
     var remoteDatamanager: FavoriteDetailRemoteDataManagerInputProtocol?
@@ -27,4 +32,8 @@ class FavoriteDetailInteractor: FavoriteDetailInteractorInputProtocol {
 
 extension FavoriteDetailInteractor: FavoriteDetailRemoteDataManagerOutputProtocol {
     // TODO: Implement use case methods
+}
+
+extension FavoriteDetailInteractor:  FavoriteDetailLocalDataManagerOutputProtocol{
+     
 }

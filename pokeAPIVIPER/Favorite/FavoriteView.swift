@@ -27,15 +27,18 @@ class FavoriteView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
+        DispatchQueue.main.async {
+            self.collectionview.reloadData()
+        }
        
     }
     
 }
 
 extension FavoriteView: FavoriteViewProtocol {
-    func showData(fav: [favorite]) {
+      func showData(fav: [favorite]) {
         
-        presenter?.arrFavoritos = fav
+          presenter?.arrFavoritos = fav
         DispatchQueue.main.async {
             self.collectionview.reloadData()
         }
@@ -70,6 +73,7 @@ extension FavoriteView : UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         presenter?.showDataDetail(fav: (presenter?.arrFavoritos[indexPath.row])!)
+      
         
     }
     

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 protocol FavoriteDetailViewProtocol: AnyObject {
     // PRESENTER -> VIEW
@@ -18,6 +19,7 @@ protocol FavoriteDetailViewProtocol: AnyObject {
 protocol FavoriteDetailWireFrameProtocol: AnyObject {
     // PRESENTER -> WIREFRAME
     static func createFavoriteDetailModule(fav: favorite) -> UIViewController
+    func presenterFavoriteView(from view: FavoriteDetailViewProtocol)
 }
 
 protocol FavoriteDetailPresenterProtocol: AnyObject {
@@ -25,15 +27,13 @@ protocol FavoriteDetailPresenterProtocol: AnyObject {
     var view: FavoriteDetailViewProtocol? { get set }
     var interactor: FavoriteDetailInteractorInputProtocol? { get set }
     var wireFrame: FavoriteDetailWireFrameProtocol? { get set }
-    var datoReFav: favorite? {get set}
-    var favS: favorite! {get set}
     func deleteFavoritos(id: Int)
-    
     func viewDidLoad()
 }
 
 protocol FavoriteDetailInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
+    
 }
 
 protocol FavoriteDetailInteractorInputProtocol: AnyObject {
@@ -41,7 +41,8 @@ protocol FavoriteDetailInteractorInputProtocol: AnyObject {
     var presenter: FavoriteDetailInteractorOutputProtocol? { get set }
     var localDatamanager: FavoriteDetailLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: FavoriteDetailRemoteDataManagerInputProtocol? { get set }
-   
+    var entity : FavoriteDetailEntity? {get set}
+    var entityFav: favorite? {get set}
     func eliminate(id: Int)
 }
 
@@ -60,6 +61,12 @@ protocol FavoriteDetailRemoteDataManagerOutputProtocol: AnyObject {
 
 protocol FavoriteDetailLocalDataManagerInputProtocol: AnyObject {
     // INTERACTOR -> LOCALDATAMANAGER
-    
+    var localRequestHandler: FavoriteDetailLocalDataManagerOutputProtocol? {get set}
     func  deleteData(id: Int)
+    
+}
+
+protocol FavoriteDetailLocalDataManagerOutputProtocol: AnyObject{
+    // LOCALDATAMANAGER -> INTERACTOR
+  
 }

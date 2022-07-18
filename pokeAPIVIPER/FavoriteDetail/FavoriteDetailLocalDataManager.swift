@@ -11,9 +11,10 @@ import CoreData
 import UIKit
 
 class FavoriteDetailLocalDataManager:FavoriteDetailLocalDataManagerInputProtocol {
+    var localRequestHandler: FavoriteDetailLocalDataManagerOutputProtocol?
     
     var fav : [NSManagedObject]?
-    
+ 
     func deleteData(id: Int) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
               let context = appDelegate.persistentContainer.viewContext

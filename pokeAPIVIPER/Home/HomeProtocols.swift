@@ -13,6 +13,7 @@ protocol HomeViewProtocol: AnyObject {
     // PRESENTER -> VIEW
     var presenter: HomePresenterProtocol? { get set }
     func presenterPushDataView(with data: [Pokemon_Struct])
+ 
     
 }
 
@@ -32,6 +33,7 @@ protocol HomePresenterProtocol: AnyObject {
     var wireFrame: HomeWireFrameProtocol? { get set }
     func showDataDetail(poke: Pokemon_Struct)
     var arrListaPoke : [Pokemon_Struct]! {get set}
+  
     
     func viewDidLoad()
 }
@@ -40,7 +42,7 @@ protocol HomeInteractorOutputProtocol: AnyObject {
 // INTERACTOR -> PRESENTER
      
     func interactorPushDataPresenter(with data: [Pokemon_Struct])
-    func pokemon(poke: Pokemon_Struct)
+   
 }
 
 protocol HomeInteractorInputProtocol: AnyObject {
@@ -48,7 +50,6 @@ protocol HomeInteractorInputProtocol: AnyObject {
     var presenter: HomeInteractorOutputProtocol? { get set }
     var localDatamanager: HomeLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: HomeRemoteDataManagerInputProtocol? { get set }
-   
     func interactorGetData()
 }
 

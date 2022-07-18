@@ -7,6 +7,12 @@
 
 import Foundation
 
+class pokemonEntity {
+    var arrLista : [Pokemon_Struct]!
+  
+
+}
+
 struct Pokemon_Struct : Codable {
         let id: Int
         let attack: Int
@@ -16,4 +22,3 @@ struct Pokemon_Struct : Codable {
         let imageUrl: String
         let type: String
 }
-

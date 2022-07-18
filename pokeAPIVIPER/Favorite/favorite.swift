@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class favorite : NSObject {
     var id : Int
     var attack: Int
@@ -22,6 +23,10 @@ class favorite : NSObject {
         self.imageUrl = imageUrl
         self.id = id
           
-    }
+    
+
+}
+    
+var arrFavoritos: [favorite]!
 
 }

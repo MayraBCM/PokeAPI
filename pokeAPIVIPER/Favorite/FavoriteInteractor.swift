@@ -9,6 +9,8 @@
 import Foundation
 
 class FavoriteInteractor: FavoriteInteractorInputProtocol, FavoriteLocalDataManagerOutputProtocol {
+    var entity: favorite?
+    
     
     weak var presenter: FavoriteInteractorOutputProtocol?
     var localDatamanager: FavoriteLocalDataManagerInputProtocol?
